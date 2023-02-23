@@ -35,3 +35,6 @@ C:\Users\Enes\source\repos\MovieStoreSln\WebApi\obj\Debug\net7.0\refint\WebApi.d
 C:\Users\Enes\source\repos\MovieStoreSln\WebApi\obj\Debug\net7.0\WebApi.pdb
 C:\Users\Enes\source\repos\MovieStoreSln\WebApi\obj\Debug\net7.0\WebApi.genruntimeconfig.cache
 C:\Users\Enes\source\repos\MovieStoreSln\WebApi\obj\Debug\net7.0\ref\WebApi.dll
+C:\Users\Enes\source\repos\MovieStoreSln\WebApi\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\Enes\source\repos\MovieStoreSln\WebApi\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Enes\source\repos\MovieStoreSln\WebApi\bin\Debug\net7.0\FluentValidation.dll

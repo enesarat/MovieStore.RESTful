@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "1N/2G5DpoyYW1JY/HIB9CV8ehPhDNcQpH8bd111MHnK7SYlPvdWF9I89CyZQjBs+BfdPMaWy1FHDIUSuuwsRxw==",
+  "dgSpecHash": "k97Muw91Lh64rIftVCTIyqWiKtcHfeNHMr+i11aELscoExf+HDZR5lYOhD6RvPJaDNqk6KdHp8AU+QodMrLUvQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Enes\\source\\repos\\MovieStoreSln\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Enes\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Enes\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\Enes\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
     "C:\\Users\\Enes\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.2\\microsoft.aspnetcore.openapi.7.0.2.nupkg.sha512",
+    "C:\\Users\\Enes\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Enes\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.3\\microsoft.entityframeworkcore.7.0.3.nupkg.sha512",
     "C:\\Users\\Enes\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.3\\microsoft.entityframeworkcore.abstractions.7.0.3.nupkg.sha512",
     "C:\\Users\\Enes\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.3\\microsoft.entityframeworkcore.analyzers.7.0.3.nupkg.sha512",
