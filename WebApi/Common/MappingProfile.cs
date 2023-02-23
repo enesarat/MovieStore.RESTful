@@ -9,6 +9,10 @@ using static WebApi.Application.DirectorOperations.Commands.CreateDirector.Creat
 using static WebApi.Application.DirectorOperations.Commands.UpdateDirector.UpdateDirectorCommand;
 using static WebApi.Application.DirectorOperations.Queries.GetDirectorDetail.GetDirectorDetailQuery;
 using static WebApi.Application.DirectorOperations.Queries.GetDirectors.GetDirectorsQuery;
+using static WebApi.Application.MovieOperations.Commands.CreateMovie.CreateMovieCommand;
+using static WebApi.Application.MovieOperations.Commands.UpdateMovie.UpdateMovieCommand;
+using static WebApi.Application.MovieOperations.Queries.GetMovieDetail.GetMovieDetailQuery;
+using static WebApi.Application.MovieOperations.Queries.GetMovies.GetMoviesQuery;
 
 namespace WebApi.Common
 {
@@ -29,6 +33,17 @@ namespace WebApi.Common
             CreateMap<Director, DirectorViewModel>();
             CreateMap<Director, DirectorDetailViewModel>();
             CreateMap<UpdateDirectorViewModel, Director>();
+
+
+            //Movie Mapping
+            CreateMap<Movie, MovieViewModel>().ForMember(dest => dest.Director, opt => opt.MapFrom(src => src.Director.Name + " " + src.Director.Surname));
+            CreateMap<Movie, MovieDetailViewModel>()
+                .ForMember(dest => dest.Director, opt => opt.MapFrom(src => src.Director.Name + " " + src.Director.Surname))
+                .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.GenreTitle))
+                .ForMember(dest => dest.Actors, opt => opt.MapFrom(src => src.ActorMovieJoint.Select(x => x.Actor.Name + " " + x.Actor.Surname)));
+
+            CreateMap<CreateMovieViewModel, Movie>();
+            CreateMap<UpdateMovieViewModel, Movie>();
         }
     }
 }  

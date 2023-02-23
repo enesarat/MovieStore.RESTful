@@ -27,16 +27,18 @@ namespace WebApi.Controllers
             _context = context;
         }
 
-        [HttpGet] // Tüm yönetmenleri getir
-        public IActionResult GetDirectors()
+        // Here, we retreive all director data from database context via GetAllDirectors endpoint.
+        [HttpGet]
+        public IActionResult GetAllDirectors()
         {
             GetDirectorsQuery query = new GetDirectorsQuery(_context, _mapper);
             var result = query.Handle();
             return Ok(result);
         }
 
-        [HttpGet("{id}")] // ID'ye göre yönetmen getir
-        public IActionResult GetById(int id)
+        // Here, we retreive the director data according to given id info from database context via GetDirectorById endpoint.
+        [HttpGet("{id}")]
+        public IActionResult GetDirectorById(int id)
         {
             DirectorDetailViewModel result;
             GetDirectorDetailQuery query = new GetDirectorDetailQuery(_context, _mapper);
@@ -47,7 +49,9 @@ namespace WebApi.Controllers
             return Ok(result);
         }
 
-        [HttpPost] // Yönetmen ekleme
+
+        // Here, we create director data according to incoming author informations into database context via AddDirector endpoint.
+        [HttpPost]
         public IActionResult AddDirector([FromBody] CreateDirectorViewModel newDirector)
         {
             CreateDirectorCommand command = new CreateDirectorCommand(_context, _mapper);
@@ -58,18 +62,8 @@ namespace WebApi.Controllers
             return Ok();
         }
 
-        [HttpDelete] // Yönetmen silme
-        public IActionResult DeleteDirector(int id)
-        {
-            DeleteDirectorCommand command = new DeleteDirectorCommand(_context);
-            command.DirectorId = id;
-            DeleteDirectorCommandValidator validator = new DeleteDirectorCommandValidator();
-            validator.ValidateAndThrow(command);
-            command.Handle();
-            return Ok();
-        }
-
-        [HttpPut("{id}")] // Yönetmen güncelle
+        // Here, we update the director data according to related author informations which exist on Id to database context via UpdateDirector endpoint.
+        [HttpPut("{id}")]
         public IActionResult UpdateDirector([FromBody] UpdateDirectorViewModel updatedDirector, int id)
         {
 
@@ -82,5 +76,16 @@ namespace WebApi.Controllers
             return Ok();
         }
 
+        // Here, we delete the director data according to given id info from database context via DeleteDirector endpoint.
+        [HttpDelete]
+        public IActionResult DeleteDirector(int id)
+        {
+            DeleteDirectorCommand command = new DeleteDirectorCommand(_context);
+            command.DirectorId = id;
+            DeleteDirectorCommandValidator validator = new DeleteDirectorCommandValidator();
+            validator.ValidateAndThrow(command);
+            command.Handle();
+            return Ok();
+        }
     }
 }
