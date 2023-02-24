@@ -18,7 +18,7 @@ namespace WebApi.Application.ActorOperaitons.Queries.GetActorDetail
 
         public ActorDetailViewModel Handle()
         {
-            var actor = _context.ActorActress.Where(actor => actor.Id == ActorId).SingleOrDefault();
+            var actor = _context.Actor.Where(actor => actor.Id == ActorId).SingleOrDefault();
             if (actor == null)
             {
                 throw new InvalidOperationException("Actor could not found!");

@@ -20,7 +20,7 @@ namespace WebApi.Application.MovieOperations.Queries.GetMovieDetail
         {
             var movie = _context.Movies.Include(x => x.Director).Include(x => x.Genre).Include(x => x.ActorMovieJoint).ThenInclude(x => x.Actor).Where(x => x.Id == MovieId).FirstOrDefault();
 
-            var aktörler = _context.actorActressMovieJoints.Where(x => x.MovieId == MovieId).ToList();
+            var aktörler = _context.actorMovieJoints.Where(x => x.MovieId == MovieId).ToList();
 
             if (movie == null)
             {

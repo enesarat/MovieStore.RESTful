@@ -19,7 +19,7 @@ namespace WebApi.Application.ActorOperaitons.Commands.UpdateActor
 
         public void Handle()
         {
-            var actor = _context.ActorActress.SingleOrDefault(x => x.Id == ActorId);
+            var actor = _context.Actor.SingleOrDefault(x => x.Id == ActorId);
 
             if (actor == null)
             {

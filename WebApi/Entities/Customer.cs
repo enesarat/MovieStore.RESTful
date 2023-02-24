@@ -10,7 +10,7 @@ namespace WebApi.Entities
         public string Surname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string RefreshToken { get; set; }
+        public string? RefreshToken { get; set; }
         public DateTime RefreshTokenExpirationDate { get; set; }
         public virtual ICollection<Genre> FavouriteGenre { get; set; }
         public virtual ICollection<Order> Orders { get; set; }

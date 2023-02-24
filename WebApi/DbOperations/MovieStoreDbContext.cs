@@ -10,8 +10,8 @@ namespace WebApi.DbOperations
 
         }
 
-        public DbSet<Actor> ActorActress { get; set; }
-        public DbSet<ActorMovieJoint> actorActressMovieJoints { get; set; }
+        public DbSet<Actor> Actor { get; set; }
+        public DbSet<ActorMovieJoint> actorMovieJoints { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Director> Directors { get; set; }
         public DbSet<Genre> Genres { get; set; }

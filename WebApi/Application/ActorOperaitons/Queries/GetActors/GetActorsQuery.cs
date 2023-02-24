@@ -16,7 +16,7 @@ namespace WebApi.Application.ActorOperaitons.Queries.GetActors
 
         public List<ActorViewModel> Handle()
         {
-            var actorList = _context.ActorActress.ToList();
+            var actorList = _context.Actor.ToList();
             List<ActorViewModel> vm = _mapper.Map<List<ActorViewModel>>(actorList);
             return vm;
         }

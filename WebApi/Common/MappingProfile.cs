@@ -5,6 +5,7 @@ using static WebApi.Application.ActorOperaitons.Commands.CreateActor.CreateActor
 using static WebApi.Application.ActorOperaitons.Commands.UpdateActor.UpdateActorCommand;
 using static WebApi.Application.ActorOperaitons.Queries.GetActorDetail.GetActorDetailQuery;
 using static WebApi.Application.ActorOperaitons.Queries.GetActors.GetActorQuery;
+using static WebApi.Application.CustomerOperations.Commands.CreateCustomer.CreateCustomerCommand;
 using static WebApi.Application.DirectorOperations.Commands.CreateDirector.CreateDirectorCommand;
 using static WebApi.Application.DirectorOperations.Commands.UpdateDirector.UpdateDirectorCommand;
 using static WebApi.Application.DirectorOperations.Queries.GetDirectorDetail.GetDirectorDetailQuery;
@@ -54,6 +55,9 @@ namespace WebApi.Common
             CreateMap<Genre, GenreViewModel>();
             CreateMap<Genre, GenreDetailViewModel>();
             CreateMap<UpdateGenreViewModel, Genre>();
+
+            //Customer Mapping
+            CreateMap<CreateCustomerModel, Customer>();
         }
     }
 }  

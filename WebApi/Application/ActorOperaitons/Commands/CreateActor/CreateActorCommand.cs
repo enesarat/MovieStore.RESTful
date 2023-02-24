@@ -19,7 +19,7 @@ namespace WebApi.Application.ActorOperaitons.Commands.CreateActor
 
         public void Handle()
         {
-            var actor = _context.ActorActress.SingleOrDefault(x => x.Name == Model.Name);
+            var actor = _context.Actor.SingleOrDefault(x => x.Name == Model.Name);
             if (actor != null)
             {
                 throw new InvalidOperationException("A actor with the given title already exists!");
@@ -27,7 +27,7 @@ namespace WebApi.Application.ActorOperaitons.Commands.CreateActor
 
             actor = _mapper.Map<Actor>(Model);
 
-            _context.ActorActress.Add(actor);
+            _context.Actor.Add(actor);
             _context.SaveChanges();
         }
 

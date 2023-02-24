@@ -15,14 +15,14 @@ namespace WebApi.Application.ActorOperaitons.Commands.DeleteActor
 
         public void Handle()
         {
-            var actor = _dbContext.ActorActress.SingleOrDefault(x => x.Id == ActorId);
+            var actor = _dbContext.Actor.SingleOrDefault(x => x.Id == ActorId);
 
             if (actor == null)
             {
                 throw new InvalidOperationException($"Actor with id: {ActorId} not exists, delete operation failed!");
             }
 
-            _dbContext.ActorActress.Remove(actor);
+            _dbContext.Actor.Remove(actor);
             _dbContext.SaveChanges();
 
         }
