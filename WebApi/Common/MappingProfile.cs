@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using WebApi.Application.OrderOperations.Queries.GetOrderDetail;
+using WebApi.Application.OrderOperations.Queries.GetOrders;
 using WebApi.DbOperations;
 using WebApi.Entities;
 using static WebApi.Application.ActorOperaitons.Commands.CreateActor.CreateActorCommand;
@@ -18,6 +20,7 @@ using static WebApi.Application.MovieOperations.Commands.CreateMovie.CreateMovie
 using static WebApi.Application.MovieOperations.Commands.UpdateMovie.UpdateMovieCommand;
 using static WebApi.Application.MovieOperations.Queries.GetMovieDetail.GetMovieDetailQuery;
 using static WebApi.Application.MovieOperations.Queries.GetMovies.GetMoviesQuery;
+using static WebApi.Application.OrderOperations.Commands.CreateOrder.CreateOrderCommand;
 
 namespace WebApi.Common
 {
@@ -58,6 +61,18 @@ namespace WebApi.Common
 
             //Customer Mapping
             CreateMap<CreateCustomerModel, Customer>();
+
+            CreateMap<CreateOrderModel, Order>();
+            CreateMap<Customer, OrderDetailViewModel>()
+            .ForMember(dest => dest.FirstNameLastname, opt => opt.MapFrom(m => m.Name + " " + m.Surname))
+            .ForMember(dest => dest.Movies, opt => opt.MapFrom(m => m.Orders.Select(s => s.Movie.Title)))
+            .ForMember(dest => dest.Price, opt => opt.MapFrom(m => m.Orders.Select(s => s.Movie.Price)))
+            .ForMember(dest => dest.PurchasedDate, opt => opt.MapFrom(m => m.Orders.Select(s => s.PurchasedTime)));
+            CreateMap<Customer, OrderViewModel>()
+            .ForMember(dest => dest.NameSurname, opt => opt.MapFrom(m => m.Name + " " + m.Surname))
+            .ForMember(dest => dest.Movies, opt => opt.MapFrom(m => m.Orders.Select(s => s.Movie.Title)))
+            .ForMember(dest => dest.Price, opt => opt.MapFrom(m => m.Orders.Select(s => s.Movie.Price)))
+            .ForMember(dest => dest.PurchasedDate, opt => opt.MapFrom(m => m.Orders.Select(s => s.PurchasedTime)));
         }
     }
 }  

@@ -49,7 +49,7 @@ namespace WebApi.Controllers
             return Ok(result);
         }
 
-        // Here, we create actor data according to incoming author informations into database context via AddActor endpoint.
+        // Here, we create actor data according to incoming actor informations into database context via AddActor endpoint.
         [HttpPost]
         public IActionResult AddActor([FromBody] CreateActorModel newActor)
         {
@@ -61,7 +61,7 @@ namespace WebApi.Controllers
             return Ok();
         }
 
-        // Here, we update the actor data according to related author informations which exist on Id to database context via UpdateActor endpoint.
+        // Here, we update the actor data according to related actor informations which exist on Id to database context via UpdateActor endpoint.
         [HttpPut("{id}")]
         public IActionResult UpdateActor(int id, [FromBody] UpdateActorModel updatedActor)
         {

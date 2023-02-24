@@ -50,7 +50,7 @@ namespace WebApi.Controllers
             return Ok(result);
         }
 
-        // Here, we create movie data according to incoming author informations into database context via AddMovie endpoint.
+        // Here, we create movie data according to incoming movie informations into database context via AddMovie endpoint.
         [HttpPost]
         public IActionResult AddMovie([FromBody] CreateMovieViewModel newMovie)
         {
@@ -62,7 +62,7 @@ namespace WebApi.Controllers
             return Ok();
         }
 
-        // Here, we update the movie data according to related author informations which exist on Id to database context via UpdateMovie endpoint.
+        // Here, we update the movie data according to related movie informations which exist on Id to database context via UpdateMovie endpoint.
         [HttpPut("{id}")]
         public IActionResult UpdateMovie([FromBody] UpdateMovieViewModel updatedMovie, int id)
         {

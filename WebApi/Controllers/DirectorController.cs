@@ -50,7 +50,7 @@ namespace WebApi.Controllers
         }
 
 
-        // Here, we create director data according to incoming author informations into database context via AddDirector endpoint.
+        // Here, we create director data according to incoming director informations into database context via AddDirector endpoint.
         [HttpPost]
         public IActionResult AddDirector([FromBody] CreateDirectorViewModel newDirector)
         {
@@ -62,7 +62,7 @@ namespace WebApi.Controllers
             return Ok();
         }
 
-        // Here, we update the director data according to related author informations which exist on Id to database context via UpdateDirector endpoint.
+        // Here, we update the director data according to related director informations which exist on Id to database context via UpdateDirector endpoint.
         [HttpPut("{id}")]
         public IActionResult UpdateDirector([FromBody] UpdateDirectorViewModel updatedDirector, int id)
         {

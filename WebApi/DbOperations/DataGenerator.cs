@@ -50,7 +50,12 @@ namespace WebApi.DbOperations
                     new ActorMovieJoint { ActorId = 2, MovieId = 3 },
                     new ActorMovieJoint { ActorId = 4, MovieId = 4 });
 
-
+                //Orders
+                context.Orders.AddRange(
+                  new Order { CustomerId = 1, MovieId = 1, PurchasedTime = new DateTime(2022, 07, 06), IsActive = true },
+                  new Order { CustomerId = 2, MovieId = 1, PurchasedTime = new DateTime(2022, 12, 05), IsActive = true },
+                  new Order { CustomerId = 3, MovieId = 2, PurchasedTime = new DateTime(2022, 08, 25), IsActive = true }
+                  );
                 context.SaveChanges();
 
             }

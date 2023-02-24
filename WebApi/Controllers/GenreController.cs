@@ -48,7 +48,7 @@ namespace WebApi.Controllers
             return Ok(result);
         }
 
-        // Here, we create genre data according to incoming author informations into database context via AddGenre endpoint.
+        // Here, we create genre data according to incoming genre informations into database context via AddGenre endpoint.
         [HttpPost]
         public IActionResult AddGenre([FromBody] CreateGenreViewModel newGenre)
         {
@@ -61,7 +61,7 @@ namespace WebApi.Controllers
 
         }
 
-        // Here, we update the genre data according to related author informations which exist on Id to database context via UpdateGenre endpoint.
+        // Here, we update the genre data according to related genre informations which exist on Id to database context via UpdateGenre endpoint.
         [HttpPut("{id}")]
         public IActionResult UpdateGenre([FromBody] UpdateGenreViewModel updatedGenre, int id)
         {
