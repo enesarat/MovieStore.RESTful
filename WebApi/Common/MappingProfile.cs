@@ -9,6 +9,10 @@ using static WebApi.Application.DirectorOperations.Commands.CreateDirector.Creat
 using static WebApi.Application.DirectorOperations.Commands.UpdateDirector.UpdateDirectorCommand;
 using static WebApi.Application.DirectorOperations.Queries.GetDirectorDetail.GetDirectorDetailQuery;
 using static WebApi.Application.DirectorOperations.Queries.GetDirectors.GetDirectorsQuery;
+using static WebApi.Application.GenreOperations.Commands.CreateGenre.CreateGenreCommand;
+using static WebApi.Application.GenreOperations.Commands.UpdateGenre.UpdateGenreCommand;
+using static WebApi.Application.GenreOperations.Queries.GetGenreDetail.GetGenreDetailQuery;
+using static WebApi.Application.GenreOperations.Queries.GetGenres.GetGenresQuery;
 using static WebApi.Application.MovieOperations.Commands.CreateMovie.CreateMovieCommand;
 using static WebApi.Application.MovieOperations.Commands.UpdateMovie.UpdateMovieCommand;
 using static WebApi.Application.MovieOperations.Queries.GetMovieDetail.GetMovieDetailQuery;
@@ -44,6 +48,12 @@ namespace WebApi.Common
 
             CreateMap<CreateMovieViewModel, Movie>();
             CreateMap<UpdateMovieViewModel, Movie>();
+
+            //Genre Mapping
+            CreateMap<CreateGenreViewModel, Genre>();
+            CreateMap<Genre, GenreViewModel>();
+            CreateMap<Genre, GenreDetailViewModel>();
+            CreateMap<UpdateGenreViewModel, Genre>();
         }
     }
 }  

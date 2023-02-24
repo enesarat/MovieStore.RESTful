@@ -21,7 +21,7 @@ namespace WebApi.Application.DirectorOperations.Commands.CreateDirector
             var director = _context.Directors.SingleOrDefault(x => x.Name == Model.Name);
             if (director != null)
             {
-                throw new InvalidOperationException("Director with given name is already exists!");
+                throw new InvalidOperationException("A director with the given title already exists!");
             }
 
             director = _mapper.Map<Director>(Model);

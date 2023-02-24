@@ -22,7 +22,7 @@ namespace WebApi.Application.ActorOperaitons.Commands.CreateActor
             var actor = _context.ActorActress.SingleOrDefault(x => x.Name == Model.Name);
             if (actor != null)
             {
-                throw new InvalidOperationException("Actor already exists!");
+                throw new InvalidOperationException("A actor with the given title already exists!");
             }
 
             actor = _mapper.Map<Actor>(Model);
